@@ -1,6 +1,24 @@
-<dl>
-    <dt *ngFor="let frase of frases">{{ frase.texto }}</dt>
-  </dl>
+<div class="row">
+  <div class="col d-flex justify-content-center btn-group">
+    <button (click)="prev()" class="btn flex-fill fs-4 font-monospace border bg-info bg-gradient text-light">Anterior</button>
+    <button (click)="next()" class="btn flex-fill fs-4 font-monospace border bg-info bg-gradient text-light">Seguent</button>
+    <!-- (click) es una directiva (como una funcion interna de Angular) que escucha el click del html -->
+  </div>
+</div>
 
-    <!--genera contenido para cada elemento del array frases, mostrando el texto de cada elemento en la plantilla -->
+
+<div class="row">
+
+  <div class="col d-flex justify-content-center m-5">
+    <ul class="list-group d-flex justify-content-center">
+      <li class="list-group-item text-center m-2 rounded-pill border-3" *ngFor="let frase of frases; let i=index"
+      [class.highlighted]="i === currentSentence">
+      {{ frase.texto }}</li>                         <!--genera contenido para cada elemento del array frases,
+                                                       mostrando el texto de cada elemento en la plantilla -->
+    </ul>
+  </div>
+</div>
+
+
+    
   
