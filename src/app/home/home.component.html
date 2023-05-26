@@ -1,4 +1,16 @@
 
-<app-escena [frases]="frases"></app-escena>  <!-- establece una conexión de datos entre el componente HomeComponent y el componente
+<div *ngIf="!mostrarEscena" class="row text-center p-5 mb-5">
+    <p class="font-monospace m-5 fs-4">Bienvenidos a la pesadilla de Angu....perdon quise decir a este fabuloso cuento....</p>
+    <p class="p-5 fs-5">El cuento va de un heroe que dejo de estudiar Angular y se fue a vivir al espacio para ser feliz...</p>
+    <button (click)="empezarJuego()" class="btn btn-primary fs-5">Start</button>
+  </div>
+  
+
+
+
+<div *ngIf="mostrarEscena">
+    <app-escena [frases]="frases"></app-escena>
+  </div>
+                                            <!-- establece una conexión de datos entre el componente HomeComponent y el componente
                                              EscenaComponent, pasando el array frases del padre al hijo a través
                                              de la propiedad de enlace [frases] -->
